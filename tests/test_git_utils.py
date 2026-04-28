@@ -1,6 +1,5 @@
 """Tests for git_utils module."""
 
-import pytest
 from devpulse.git_utils import should_ignore_file, filter_diff
 
 

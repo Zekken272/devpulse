@@ -1,6 +1,5 @@
 """Tests for the reviewer module."""
 
-import pytest
 from unittest.mock import patch, MagicMock
 from devpulse.reviewer import (
     parse_review_response,

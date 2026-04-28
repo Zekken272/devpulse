@@ -3,12 +3,10 @@
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
-from rich.text import Text
 from rich.rule import Rule
 from rich import box
 from rich.spinner import Spinner
 from rich.live import Live
-import time
 
 from devpulse.reviewer import ReviewResult
 
@@ -67,7 +65,7 @@ def _section_panel(
     """Build a single review section panel."""
     is_empty = not content or content.strip() == "None found."
     body = (
-        f"[dim italic]None found.[/dim italic]"
+        "[dim italic]None found.[/dim italic]"
         if is_empty
         else content.strip()
     )

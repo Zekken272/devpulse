@@ -2,7 +2,7 @@
 
 import requests
 import json
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 
 OLLAMA_BASE_URL = "http://localhost:11434"
@@ -50,19 +50,19 @@ class ReviewResult:
     def issue_count(self) -> int:
         if not self.issues or self.issues.strip() == "None found.":
             return 0
-        return len([l for l in self.issues.strip().splitlines() if l.strip()])
+        return len([line for line in self.issues.strip().splitlines() if line.strip()])
 
     @property
     def suggestion_count(self) -> int:
         if not self.suggestions or self.suggestions.strip() == "None found.":
             return 0
-        return len([l for l in self.suggestions.strip().splitlines() if l.strip()])
+        return len([line for line in self.suggestions.strip().splitlines() if line.strip()])
 
     @property
     def security_count(self) -> int:
         if not self.security or self.security.strip() == "None found.":
             return 0
-        return len([l for l in self.security.strip().splitlines() if l.strip()])
+        return len([line for line in self.security.strip().splitlines() if line.strip()])
 
 
 def check_ollama_running() -> bool:
@@ -122,7 +122,7 @@ def parse_review_response(raw_text: str) -> dict[str, str]:
             if current_key and buffer:
                 # Strip dashes and blank lines from content
                 content = "\n".join(
-                    l for l in buffer if not set(l.strip()) <= {"-"}
+                    line for line in buffer if not set(line.strip()) <= {"-"}
                 ).strip()
                 sections[current_key] = content
             current_key = matched_header
@@ -134,7 +134,7 @@ def parse_review_response(raw_text: str) -> dict[str, str]:
     # Save the last section
     if current_key and buffer:
         content = "\n".join(
-            l for l in buffer if not set(l.strip()) <= {"-"}
+            line for line in buffer if not set(line.strip()) <= {"-"}
         ).strip()
         sections[current_key] = content
 

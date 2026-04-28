@@ -1,6 +1,5 @@
 """DevPulse CLI — entry point for all commands."""
 
-import sys
 import typer
 from typing import Optional
 from rich.console import Console
