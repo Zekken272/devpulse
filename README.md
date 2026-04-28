@@ -2,7 +2,7 @@
 
 > Local AI-powered code review in your terminal — no cloud, no leaks.
 
-![CI](https://github.com/zekken272/devpulse/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Zekken272/devpulse/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -37,7 +37,7 @@ ollama pull mistral
 ### Install DevPulse
 
 ```bash
-git clone https://github.com/zekken272/devpulse.git
+git clone https://github.com/Zekken272/devpulse.git
 cd devpulse
 pip install -e .
 ```
