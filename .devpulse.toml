@@ -1,0 +1,24 @@
+# DevPulse Configuration
+# Place this file in your project root to customize behavior.
+
+# Ollama model to use for reviews
+model = "mistral"
+
+# Maximum number of diff lines to send to the model
+max_lines = 500
+
+# Language for the review output
+review_language = "English"
+
+# Exit with code 1 if these categories have findings
+# Options: "security", "issues"
+fail_on = []
+
+# File patterns to exclude from the diff
+ignore_files = [
+    "*.lock",
+    "*.min.js",
+    "*.min.css",
+    "dist/",
+    "build/",
+]
