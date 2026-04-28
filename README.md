@@ -8,6 +8,7 @@
 
 DevPulse reviews your git diffs using a locally running AI model via [Ollama](https://ollama.com).
 Your code never leaves your machine.
+![DevPulse Demo](demo.gif)
 
 ---
 
